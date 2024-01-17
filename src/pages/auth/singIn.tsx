@@ -1,6 +1,7 @@
 // import { resolve } from 'path'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 import { toast } from 'sonner'
 import * as z from 'zod'
 
@@ -35,7 +36,13 @@ export function SingIn() {
   }
 
   return (
-    <div className="p-8 ">
+    <div className="p-8">
+      <Button asChild variant="ghost" className="absolute right-4 top-8">
+        {/* asChild é usado para passar um componente como filho */}
+        <Link to="/sing-up" className="">
+          Criar Conta
+        </Link>
+      </Button>
       <Helmet title="Login" />
       <title>Acessar Painel | Venadas</title>
       <div className="flex w-[350px] flex-col justify-center gap-6">
